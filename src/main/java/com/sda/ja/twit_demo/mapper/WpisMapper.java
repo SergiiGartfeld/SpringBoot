@@ -9,6 +9,7 @@ import org.mapstruct.Mappings;
 @Mapper(componentModel = "spring")
 public interface WpisMapper {
     @Mappings(value = {
+            @Mapping(target = "id", source = "wpisId"),
             @Mapping(target = "tresc", source = "wpisTresc"),
             @Mapping(target = "dataUtworzenia", source = "wpisDataUtworzenia"),
             @Mapping(target = "status", source = "wpisStatus"),
@@ -17,6 +18,7 @@ public interface WpisMapper {
     Wpis wpisDtoToStudent(WpisDto dto);
 
     @Mappings(value = {
+            @Mapping(source = "id", target = "wpisId"),
             @Mapping(source = "tresc", target = "wpisTresc"),
             @Mapping(source = "dataUtworzenia", target = "wpisDataUtworzenia"),
             @Mapping(source = "status", target = "wpisStatus"),

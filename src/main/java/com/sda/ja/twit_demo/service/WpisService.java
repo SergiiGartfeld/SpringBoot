@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
 
 @Log
 @Service
@@ -29,6 +31,15 @@ public class WpisService {
             log.log(Level.SEVERE, "Duplikat wpisu.");
         }
         return Optional.empty();
+    }
+
+    public List<WpisDto> getAll(){
+        return repository.findAll().stream()
+                .map(wpis -> wpisMapper.studentToStudentDto(wpis))
+                .collect(Collectors.toList());
+    }
+    public void remove(Long wpisId) {
+        repository.deleteById(wpisId);
     }
 
 }

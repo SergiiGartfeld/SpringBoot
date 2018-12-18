@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -13,7 +15,14 @@
                 <input type="text" name="wpisTresc">
             </td>
         </tr>
-
+        <tr>
+            <td>Typ</td>
+            <td>
+                <select type="checkbox" name="wpisTyp">
+                    <option th:each="wpisTyp : ${wpisTyp}" th:value="${wpisTyp}" th:text="${wpisTyp}"></option>
+                </select>
+            </td>
+        </tr>
 
 
         <tr>
@@ -24,5 +33,7 @@
         </tr>
     </table>
 </form>
+
+
 </body>
 </html>
