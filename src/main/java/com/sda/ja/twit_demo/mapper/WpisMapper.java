@@ -15,7 +15,7 @@ public interface WpisMapper {
             @Mapping(target = "status", source = "wpisStatus"),
             @Mapping(target = "typ", source = "wpisTyp"),
     })
-    Wpis wpisDtoToStudent(WpisDto dto);
+    Wpis wpisDtoToWpis(WpisDto dto);
 
     @Mappings(value = {
             @Mapping(source = "id", target = "wpisId"),
@@ -25,5 +25,5 @@ public interface WpisMapper {
             @Mapping(source = "typ", target = "wpisTyp"),
 
     })
-    WpisDto studentToStudentDto(Wpis wpis);
+    WpisDto wpisToWpisDto(Wpis wpis);
 }

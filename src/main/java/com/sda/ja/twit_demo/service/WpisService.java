@@ -6,7 +6,6 @@ import com.sda.ja.twit_demo.model.dto.WpisDto;
 import com.sda.ja.twit_demo.repository.WpisRepository;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public class WpisService {
     private WpisMapper wpisMapper;
 
     public Optional<Wpis> addWpis(WpisDto wpisDto){
-        Wpis wpis = wpisMapper.wpisDtoToStudent(wpisDto);
+        Wpis wpis = wpisMapper.wpisDtoToWpis(wpisDto);
 
         try {
             return Optional.of(repository.saveAndFlush(wpis));
@@ -35,7 +34,7 @@ public class WpisService {
 
     public List<WpisDto> getAll(){
         return repository.findAll().stream()
-                .map(wpis -> wpisMapper.studentToStudentDto(wpis))
+                .map(wpis -> wpisMapper.wpisToWpisDto(wpis))
                 .collect(Collectors.toList());
     }
     public void remove(Long wpisId) {

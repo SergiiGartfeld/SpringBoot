@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 public class WpisDto {
     private Long wpisId;
     private String wpisTresc;
-    private LocalDate wpisDataUtworzenia;
+    private LocalDateTime wpisDataUtworzenia;
     private Status wpisStatus;
     private Typ wpisTyp;
 }
