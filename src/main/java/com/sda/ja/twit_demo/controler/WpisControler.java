@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-public class Controler {
+public class WpisControler {
     @Autowired
     private WpisService wpisService;
 
@@ -46,7 +46,7 @@ public class Controler {
 
         return "redirect:/list";
     }
-  
+
 
 
 }
